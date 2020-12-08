@@ -23,28 +23,23 @@
       padding: 0;
     }
 
-    .background__keys-container {
-      height: 100%;
-      width: 30%;
-      z-index: -1;
-    }
-
     .background__keys {
       position: absolute;
       left: 0;
-      top: 47%;
-      z-index: inherit;
+      top: 56%;
+      z-index: 1;
     }
 
-    .background__pen-container {
+    .background__pen {
       position: absolute;
       right: 0;
-      top: 65%
+      top: 75%
     }
 
     .main__header {
       display: block;
       background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 0));
+      height: 5.5rem;
       margin-bottom: 2rem;
       padding: 1rem;
       position: fixed;
@@ -87,6 +82,7 @@
       display: block;
       margin-left: 5rem;
       margin-top: 6rem;
+      z-index: 1;
     }
 
     .headline__container {
@@ -102,34 +98,32 @@
       font-weight: 700;
     }
 
-    .tenant__table {
-      display: block;
-      border-bottom: 1px solid #006533;
-      justify-content: center;
-      padding: 0;
-      position: fixed;
-      width: 90%;
-      margin: 0 auto;
-      box-shadow: 0px 2px 8px rgba(69, 69, 69, 0.3);
+    .tenant__table-container {
       background-color: #fff;
+      border-bottom: 1px solid #006533;
+      box-shadow: 0px 2px 8px rgba(69, 69, 69, 0.3);
+      padding-left: 1rem;
+      position: relative;
+      width: 90%;
       z-index: 12;
     }
 
-    .tenant__table-content {
+    .tenant__table {
       display: grid;
+      grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
       align-items: center;
       font-family: 'Poppins', sans-serif;
       font-size: 14px;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       height: 123px;
       list-style: none;
       margin: 0 auto;
       padding: 0;
+      position: relative;
       width: 100%;
+      z-index: 12;
     }
 
     .tenant__table-item {
-      justify-content: space-evenly;
       margin: 0 auto;
       padding: 0;
       text-align: left;
@@ -145,6 +139,8 @@
       font-size: 16px;
       font-weight: 500;
       height: 22px;
+      margin: 0 1rem;
+      width: 100%;
     }
 
     .tenant__email {
@@ -175,32 +171,85 @@
       transition: 0.7s;
     }
   </style>
+
+  /* @media all and (max-width: 1260px) {
+  .main__header {
+  height: 10rem;
+  }
+
+  .logo__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  }
+
+  .header__logo {
+  margin: 0 auto;
+  }
+
+  .vl {
+  border: none !important;
+  display: none !important;
+  }
+
+  .logo__text-container {
+  line-height: 3rem;
+  margin: 0 auto;
+  }
+
+  .logo__text {
+  margin: 0 auto;
+  }
+
+  .content__container {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  }
+
+  .headline {
+  margin: 10rem auto;
+  text-align: center;
+  }
+
+  .tenant__table {
+  margin: 0 15px;
+  height: 50%;
+  width: 100%;
+  }
+
+  .tenant__table-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  }
+  } */
 </head>
 
-<body>
+<body class="col-12 col-s-12">
   <header class="main__header">
     <div class="logo__container">
       <img class="header__logo" src="assets/header_logo.png" alt="road to close logo" />
-      <span class="logo__text-container">
+      <div class="logo__text-container">
         <div class="vl"></div>
         <h1 class="logo__text">Real Estate Payment Platform</h1>
-      </span>
+      </div>
     </div>
   </header>
   <br />
   <br />
-  <div class="background__keys-container">
-    <img class="background__keys" src="assets/keys.png" alt="keys" />
-  </div>
-  <div class="background__pen-container">
-    <img class="background__pen" src="assets/pen.png" alt="pen" />
-  </div>
+  <img class="background__keys" src="assets/keys.png" alt="keys" />
+  <img class="background__pen" src="assets/pen.png" alt="pen" />
   <div class="content__container">
     <div class="headline__container">
       <h1 class="headline">The secure and easy way to pay.</h1>
     </div>
-    <div class="tenant__table">
-      <ul class="tenant__table-content">
+    <div class="tenant__table-container">
+      <ul class="tenant__table">
         <li class="tenant__table-item">
           <img class="tenant__logo" src="assets/lb_logo.png" alt="lemonbrew logo" />
         </li>
