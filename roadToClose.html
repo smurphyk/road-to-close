@@ -7,6 +7,8 @@
   <title>LemonBrew | Road to Close</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
     body,
     html {
@@ -16,26 +18,37 @@
       background-size: 100%;
       box-sizing: border-box;
       margin: 0;
+      padding: 1rem;
     }
 
     .background__keys-container {
       height: 100%;
       width: 30%;
+      z-index: -1;
     }
 
     .background__keys {
       position: absolute;
       left: 0;
       top: 50%;
+      z-index: inherit;
+    }
+
+    .background__pen-container {
+      position: absolute;
+      right: 0;
+      top: 75%
     }
 
     .main__header {
       display: flex;
-      padding: 1rem;
+      margin-bottom: 1rem;
+      padding: .3rem;
     }
 
     .logo__container {
       display: inline-flex;
+      margin-bottom: 1rem;
       width: 100%;
       align-items: flex-start;
     }
@@ -61,13 +74,85 @@
       border-left: 2px solid #006533;
       height: 39px;
     }
+
+    .content__container {
+      display: block;
+      margin-left: 5rem;
+    }
+
+    .headline__container {
+      align-items: center;
+      height: 123px;
+      justify-content: center;
+    }
+
+    .headline {
+      color: #00a822;
+      font-family: 'Poppins', sans-serif;
+      font-size: 33px;
+      font-weight: 700;
+    }
+
+    .tenant__table {
+      display: block;
+      border-bottom: 1px solid #006533;
+      justify-content: center;
+      padding: 0;
+      position: fixed;
+      width: 90%;
+      margin: 0 auto;
+      box-shadow: 0px 2px 8px rgba(69, 69, 69, 0.3);
+      background-color: #fff;
+      z-index: 12;
+    }
+
+    .tenant__table-content {
+      display: grid;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      height: 123px;
+      list-style: none;
+      margin: 0 .2rem;
+      padding: 0;
+      width: 100%;
+    }
+
+    .tenant__table-item {
+      justify-content: space-evenly;
+      margin: 0 .2rem;
+      padding: 0;
+      text-align: center;
+    }
+
+    .tenant__logo {
+      width: 88px;
+    }
+
+    .tenant__name {
+      color: #454545;
+      font-size: 16px;
+    }
+
+    .tenant__email {
+      color: #00871b;
+    }
+
+    .tenant__address {
+      max-width: 60%;
+    }
+
+    .pay__button {
+      border: 2px solid #00a822;
+      fill: none;
+      margin: 0 auto;
+      width: 150px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="background__keys-container">
-    <img class="background__keys" src="assets/keys.png" alt="keys" />
-  </div>
   <header class="main__header">
     <div class="logo__container">
       <img class="header__logo" src="assets/header_logo.png" alt="road to close logo" />
@@ -77,7 +162,39 @@
       </span>
     </div>
   </header>
-
+  <div class="background__keys-container">
+    <img class="background__keys" src="assets/keys.png" alt="keys" />
+  </div>
+  <div class="background__pen-container">
+    <img class="background__pen" src="assets/pen.png" alt="pen" />
+  </div>
+  <div class="content__container">
+    <div class="headline__container">
+      <h1 class="headline">The secure and easy way to pay.</h1>
+    </div>
+    <div class="tenant__table">
+      <ul class="tenant__table-content">
+        <li class="tenant__table-item">
+          <img class="tenant__logo" src="assets/lb_logo.png" alt="lemonbrew logo" />
+        </li>
+        <li class="tenant__table-item">
+          <h4 class="tenant__name">LemonBrew Abstract</h4>
+        </li>
+        <li class="tenant__table-item">
+          <p class="tenant__email">www.lemonbrewabstract.com</p>
+        </li>
+        <li class="tenant__table-item">
+          <p class="tenant__phone">833-536-6627</p>
+        </li>
+        <li class="tenant__table-item">
+          <p class="tenant__address">8000 Corporate Center Dr. Suite 204, Charlotte, NC 28226</p>
+        </li>
+        <li class="tenant__table-item">
+          <button class="pay__button" type="submit">PAY</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </body>
 
 </html>
